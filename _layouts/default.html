@@ -52,6 +52,24 @@
 <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
 {% endif %}
+
+{% if paginator.total_pages > 1 %}
+ <nav role="pagination">
+   <div>
+   {% if paginator.previous_page %}
+     <a class="prev" href="/{%if paginator.previous_page > 1 %}page/{{ paginator.previous_page }}/{% endif %}">&laquo; Newer</a>
+   {% endif %}
+   {% for page in (1..paginator.total_pages) %}
+     {% if page == paginator.page %}
+       <span class="num">{{ page }}</span>
+     {% else %}
+       <a class="num" href="/{%if page > 1 %}page/{{ page }}/{% endif %}">{{ page }}</a>
+     {% endif %}
+   {% endfor %}
+   {% if paginator.next_page %}
+     <a class="next" href="/page/{{ paginator.next_page }}/">Older &raquo;</a>
+   {% endif %}
+
 <footer>
   <p>Built by <a href="https://github.com/mojombo/jekyll/wiki" target="_blank">Jekyll</a></p>
 </footer>
