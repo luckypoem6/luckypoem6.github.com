@@ -70,21 +70,21 @@ h2 {
   <h2>Project</h2>
   <ul class="fn-clear">
     <li class="fn-left">
-      <a href="/project/plant.html" title="图片加工厂"><img src="/static/images/plant.png" alt="图片加工厂" /></a>
+      <a href="/project/plant.html" title="图片加工�?><img src="/static/images/plant.png" alt="图片加工�? /></a>
     </li>
     <li class="fn-left">
       <a href="/project/light.html" title="Android 屏保"><img src="/static/images/light.gif" alt="Android 屏保" /></a>
     </li>
     <li class="fn-left">
-      <a href="http://2.gy/aaNu" title="Chrome扩展-快递查询应用"><img src="/static/images/kuaidi.png" alt="快递查询应用" /></a>
+      <a href="http://2.gy/aaNu" title="Chrome扩展-快递查询应�?><img src="/static/images/kuaidi.png" alt="快递查询应�? /></a>
     </li>
   </ul>
 </section>
 
 <section id="aboutme">
   <h2>About me</h2>
-  <p>技术爱好者.正在努力前进中</p>
-  <p><span>足迹:</span><a href="https://twitter.com/taberhuang">Twitter</a><a href="http://www.douban.com/people/34350903/">豆瓣</a><a href="http://www.yinyuetai.com/u/1437841">音悦台</a></p>
+  <p>技术爱好�?正在努力前进�?/p>
+  <p><span>足迹:</span><a href="https://twitter.com/taberhuang">Twitter</a><a href="http://www.douban.com/people/34350903/">豆瓣</a><a href="http://www.yinyuetai.com/u/1437841">音悦�?/a></p>
   <p><span>Q Q:</span>471173177</p>
   <p><span>E-mail:</span>taber.huang#gmail.com</p>
 </section>
@@ -123,3 +123,15 @@ function goTo(e) {
   return false;
 }
 </script>
+
+<div class="paging">
+  {% if paginator.previous_page %}
+    {% if paginator.previous_page == 1 %}
+    <a href="/" class="newer"><h1>Newer Posts</h1></a>
+    {% else %}
+    <a href="/page{{paginator.previous_page}}" class="newer"><h1>Newer Posts</h1></a>
+    {% endif %}
+  {% endif %}
+  {% if paginator.next_page %}
+  <a href="/page{{paginator.next_page}}" class="older"><h1>Older Posts</h1></a></li>
+  {% endif %}
