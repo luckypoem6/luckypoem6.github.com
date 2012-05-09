@@ -126,6 +126,18 @@ function goTo(e) {
 </script>
 
 {% for post in paginator.posts %}
+  <article class="post">
+    <h3><a href="{{ post.url }}" rel="bookmark permalink" title="Permanent link to this post">{{ post.title }}</a></h3>
+    {{ post.content }}
+    <div class="meta">
+      <div class="published">
+        Published: {{ post.date | date:'%Y-%m-%d' }}
+        &mdash;
+        <a href="{{ post.url }}#disqus_thread" title="Comments">Comments</a>
+      </div>
+    </div>
+    <div class="clear"></div>
+  </article>
 {% endfor %}
 
   {% if paginator.previous_page %}
