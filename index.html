@@ -57,14 +57,7 @@ h2 {
 }
 </style>
 
-<section id="article">
-  <h2>Article</h2>
-  <ul>
-    {% for post in site.posts %}
-      <li><time datetime="{{ post.date | date: "%Y-%m-%d" }}">{{ post.date | date_to_string }}</time> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
-    {% endfor %}
-  </ul>
-</section>
+{% for post in paginator.posts %}
 
 <section id="project">
   <h2>Project</h2>
@@ -124,7 +117,6 @@ function goTo(e) {
 }
 </script>
 
-<div class="paging">
   {% if paginator.previous_page %}
     {% if paginator.previous_page == 1 %}
     <a href="/" class="newer"><h1>Newer Posts</h1></a>
